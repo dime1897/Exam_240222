@@ -16,3 +16,5 @@ Non vuole vedere il codice quindi puoi anche solo capire come funziona, racconta
 
 per farlo funzionare in deploy al posto di prendere le variabili d'ambiente scrivi a mano il nome del progetto, sel topic e della sub!!!
 perche su google cloud ovviamnet enon ti fa accedere all'OS
+
+e copia il mio requirements.txt perchè devi aggiungere l'import delsistema pubsub! 
