@@ -1,4 +1,10 @@
 from google.cloud import firestore
+from google.cloud import pubsub_v1
+
+PROJECT_ID = 'exam-240222'
+publisher = pubsub_v1.PublisherClient()
+
+topic_path = publisher.topic_path(PROJECT_ID, "NUOVO-CANTIERE")
 
 class UaaS(object):
     def __init__(self):
@@ -19,6 +25,8 @@ class UaaS(object):
         ref = self.db.collection('cantieri')
         try:
             ref.document(id).set(cantiere)
+            msg = str(cantiere['indirizzo'] + " " + str(cantiere['cap']))
+            publisher.publish(topic_path, msg.encode('utf-8')).result()
             return cantiere
         except Exception as e:
             print("Exception cought in insert_cantiere(): {" + str(e) + "}")
