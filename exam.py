@@ -52,3 +52,21 @@ class UaaS(object):
         except Exception as e:
             print("Exception cought in get_umarell(): {" + str(e) + "}")
             return None
+        
+    def dump_db(self):
+        cantieri = self.db.collection('cantieri')
+        umarell = self.db.collection('umarell')
+
+        try:
+            umarels = []
+            cantiers = []
+            for doc in cantieri.stream():
+                c = doc.to_dict()
+                cantiers.append(c)
+            for doc in umarell.stream():
+                u = doc.to_dict()
+                umarels.append(u)
+            return cantiers, umarels
+        except Exception as e:
+            print("Exception cought in dump_db(): {" + str(e) + "}")
+            return None, None

@@ -1,0 +1,30 @@
+<html>
+    <link rel="stylesheet" href="/static/uaas.css">
+    <body>
+        <h1>WELCOME IN UAAS:</h1>
+        <form method="POST">
+            {{form.cap.label}}{{form.cap}}<br>
+            {{form.umarell.label}}{{form.umarell}}<br>
+            {{form.cantieri.label}}{{form.cantieri}}<br>
+            {{form.submit}}<br>
+        </form>
+
+        {% if c==1 %}
+        <h2>LISTA DEI CANTIERI:</h2>
+        <ul>
+        {% for cn in cantieri %}
+           <li>{{cn['indirizzo']}} (cap. {{cn['cap']}})</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if u==1: %}
+        <h2>LISTA DEGLI UMARELL:</h2>
+        <ul>
+        {% for um in umarell %}
+           <li>{{um['nome']}} {{um['cognome']}} (cap. {{um['cap']}})</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>
