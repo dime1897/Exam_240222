@@ -13,3 +13,6 @@ RICORDATI DI CREARE ANCHE LA SUBSCRIPTION oltre che il topic e nel file client.p
 
 
 Non vuole vedere il codice quindi puoi anche solo capire come funziona, raccontargliela più o meno come ho fatto io (quindi impegnati nel fare i test) e copiare pari pari. L'importante è che capisci cosa c'è scritto così ti copri da ogni brutta sorpresa!
+
+per farlo funzionare in deploy al posto di prendere le variabili d'ambiente scrivi a mano il nome del progetto, sel topic e della sub!!!
+perche su google cloud ovviamnet enon ti fa accedere all'OS
